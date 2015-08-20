@@ -1,0 +1,35 @@
+Type=Exe
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{FE9DED34-E159-408E-8490-B720A5E632C7}#1.0#0#C:\Windows\SysWow64\zkemkeeper.dll#ZKEMKeeper 6.0 Control
+Reference=*\G{525300A5-47D9-4C4E-8BDC-DFD57DCB91C0}#1.2#0#..\VB\BSzkem.dll#
+Form=Form1.frm
+Startup="Form1"
+ExeName32="Project1.exe"
+Command32=""
+Name="Project1"
+HelpContextID="0"
+CompatibleMode="0"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="BS"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=0
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[MS Transaction Server]
+AutoRefresh=1
