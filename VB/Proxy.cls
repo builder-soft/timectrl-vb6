@@ -12,9 +12,11 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = True
 Option Explicit
-Dim zk As New zkemkeeper.CZKEM
+Public WithEvents zk As zkemkeeper.CZKEM
+Attribute zk.VB_VarHelpID = -1
+
 Private Sub Class_Initialize()
-Rem     Set zk = CreateObject("zkemkeeper.CZKEM")
+    Set zk = New zkemkeeper.CZKEM ' CreateObject("zkemkeeper.CZKEM")
 End Sub
 Private Sub Class_Terminate()
     Set zk = Nothing
@@ -210,3 +212,68 @@ Public Function SetStrCardNumber(ByRef ACardNumber As String) As Boolean
     
     SetStrCardNumber = Out
 End Function
+
+Private Sub zk_OnAttTransaction(ByVal EnrollNumber As Long, ByVal IsInValid As Long, ByVal AttState As Long, ByVal VerifyMethod As Long, ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long)
+    WriteToLog "zk_OnAttTransaction"
+End Sub
+
+Private Sub zk_OnAttTransactionEx(ByVal EnrollNumber As String, ByVal IsInValid As Long, ByVal AttState As Long, ByVal VerifyMethod As Long, ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal WorkCode As Long)
+    WriteToLog "zk_OnAttTransactionEx"
+End Sub
+
+Private Sub zk_OnConnected()
+    WriteToLog "zk_OnConnected"
+End Sub
+
+Private Sub zk_OnDeleteTemplate(ByVal EnrollNumber As Long, ByVal FingerIndex As Long)
+    WriteToLog "zk_OnDeleteTemplate"
+End Sub
+
+Private Sub zk_OnDisConnected()
+    WriteToLog "zk_OnDisConnected"
+End Sub
+
+Private Sub zk_OnDoor(ByVal EventType As Long)
+    WriteToLog "zk_OnDoor"
+End Sub
+
+Private Sub zk_OnEmptyCard(ByVal ActionResult As Long)
+    WriteToLog "zk_OnEmptyCard"
+End Sub
+
+Private Sub zk_OnEnrollFinger(ByVal EnrollNumber As Long, ByVal FingerIndex As Long, ByVal ActionResult As Long, ByVal TemplateLength As Long)
+    WriteToLog "zk_OnEnrollFinger"
+End Sub
+
+Private Sub zk_OnEnrollFingerEx(ByVal EnrollNumber As String, ByVal FingerIndex As Long, ByVal ActionResult As Long, ByVal TemplateLength As Long)
+    WriteToLog "zk_OnEnrollFingerEx"
+End Sub
+
+Private Sub zk_OnFinger()
+    WriteToLog "zk_OnFinger"
+End Sub
+
+Private Sub zk_OnFingerFeature(ByVal Score As Long)
+    WriteToLog "zk_OnFingerFeature"
+End Sub
+
+Private Sub zk_OnHIDNum(ByVal CardNumber As Long)
+    WriteToLog "zk_OnHIDNum"
+End Sub
+
+Private Sub zk_OnKeyPress(ByVal Key As Long)
+    WriteToLog "zk_OnKeyPress"
+End Sub
+
+Private Sub zk_OnNewUser(ByVal EnrollNumber As Long)
+    WriteToLog "zk_OnNewUser"
+End Sub
+
+Private Sub zk_OnVerify(ByVal UserID As Long)
+    WriteToLog "zk_OnVerify"
+End Sub
+
+Private Sub zk_OnWriteCard(ByVal EnrollNumber As Long, ByVal ActionResult As Long, ByVal Length As Long)
+    WriteToLog "zk_OnWriteCard"
+End Sub
+

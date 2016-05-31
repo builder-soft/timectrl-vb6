@@ -1,4 +1,5 @@
 Attribute VB_Name = "Functions"
+
 Public Sub WriteToLog(Message As String)
     Dim FSO As FileSystemObject
     Dim TS As TextStream
