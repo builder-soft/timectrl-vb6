@@ -21,18 +21,6 @@ End Sub
 Private Sub Class_Terminate()
     Set zk = Nothing
 End Sub
-Private Function SetLong(ByVal Value As Long) As Long
-    SetLong = Value
-End Function
-Private Function SetString(ByVal Value As String) As String
-    SetString = Value
-End Function
-Private Function SetBoolean(ByVal Value As Boolean) As Boolean
-    SetBoolean = Value
-End Function
-Private Function SetInteger(ByVal Value As Integer) As Integer
-    SetInteger = Value
-End Function
 Public Function Connect_Net(ByVal IP As String, ByVal Port As Integer) As Boolean
     Connect_Net = zk.Connect_Net(IP, Port)
 End Function
