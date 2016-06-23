@@ -14,19 +14,22 @@ Attribute VB_Exposed = True
 Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 Private Cont As Boolean
 
-Public Event IntervalEvent(Time As String)
+Public Event IntervalEvent(ByVal Time As String)
 
 Public Sub Start()
 '    Dim dt As Date
 '    dt = Now
     Cont = True
-    
-    RaiseEvent IntervalEvent(Format(Now, "yyyy-MM-dd hh:mm:ss"))
+    Dim tme As String
+    tme = Format(Now, "yyyy-MM-dd hh:mm:ss")
+
+    WriteToLog "Before Raise Event"
+    RaiseEvent IntervalEvent(tme)
+    WriteToLog "After Raise Event"
     
 '    Do While Cont ' DateDiff("s", dt, Now) < 30
 '        DoEvents
 '        Sleep 50   ' put your app to sleep in small increments to avoid having CPU go to 100%
-        
 '        If Interval(Int(Format(Now, "s"))) Then
 '            RaiseEvent IntervalEvent(Format(Now, "yyyy-MM-dd hh:mm:ss"))
 '        End If
@@ -43,3 +46,21 @@ End Function
 Public Sub StopMe()
     Cont = False
 End Sub
+
+Public Sub WriteToLog(Message As String)
+    Dim FSO As FileSystemObject
+    Dim TS As TextStream
+
+    Set FSO = New FileSystemObject
+    
+    Set TS = FSO.OpenTextFile(App.Path & "\log" & Format$(Now, "yyyy-mm-dd") & ".txt", ForAppending, True)
+    
+    TS.Write Format$(Now, "yyyy-mm-dd hh:mm:ss ") & Message & vbCrLf
+    
+    TS.Close
+    
+    Set TS = Nothing
+    Set FSO = Nothing
+
+End Sub
+

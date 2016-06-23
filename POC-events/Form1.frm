@@ -36,9 +36,13 @@ Private WithEvents r As Library.Riser
 Attribute r.VB_VarHelpID = -1
 
 Private Sub Command1_Click()
+    WriteToLog "On click button"
+    
+    
     Set r = CreateObject("Library.Riser")
     r.Start
 End Sub
+
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     r.StopMe
@@ -46,7 +50,22 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 
 End Sub
 
-Private Sub r_IntervalEvent(Time As String)
+Private Sub r_IntervalEvent(ByVal Time As String)
     Label1.Caption = Time
      
+End Sub
+
+Public Sub WriteToLog(Message As String)
+    Dim FSO As FileSystemObject
+    Dim TS As TextStream
+
+    Set FSO = New FileSystemObject
+    
+    Set TS = FSO.OpenTextFile(App.Path & "\log" & Format$(Now, "yyyy-mm-dd") & ".txt", ForAppending, True)
+    TS.Write Message & vbCrLf
+    TS.Close
+    
+    Set TS = Nothing
+    Set FSO = Nothing
+
 End Sub

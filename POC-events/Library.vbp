@@ -1,17 +1,21 @@
 Type=OleDll
-Class=Riser; Riser.cls
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{420B2830-E718-11CF-893D-00A0C9054228}#1.0#0#C:\WINDOWS\system32\scrrun.dll#Microsoft Scripting Runtime
+Class=Riser; Riser.cls
 Startup="(None)"
+HelpFile=""
+Title="Library"
 ExeName32="Library.dll"
 Command32=""
 Name="Library"
 HelpContextID="0"
-CompatibleMode="1"
+CompatibleMode="2"
 CompatibleEXE32="Library.dll"
+VersionCompatible32="1"
 MajorVer=1
 MinorVer=0
-RevisionVer=0
-AutoIncrementVer=0
+RevisionVer=4
+AutoIncrementVer=1
 ServerSupportFiles=0
 VersionCompanyName="BS"
 CompilationType=0
@@ -30,6 +34,7 @@ Retained=0
 ThreadPerObject=0
 MaxNumberOfThreads=1
 ThreadingModel=1
+DebugStartupOption=0
 
 [MS Transaction Server]
 AutoRefresh=1
