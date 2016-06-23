@@ -1,20 +1,23 @@
 Attribute VB_Name = "Functions"
-
-Public Sub WriteToLog(Message As String)
+Public Sub WriteToLog(Message As String, Optional IsError As Boolean = False)
     Dim FSO As FileSystemObject
     Dim TS As TextStream
 
     Set FSO = New FileSystemObject
     
-    Set TS = FSO.OpenTextFile(App.Path & "\log" & Format$(Now, "yyyy-mm-dd") & ".txt", ForWriting, True)
-    TS.Write Message
+    Set TS = FSO.OpenTextFile(App.Path & "\log" & Format$(Now, "yyyy-mm-dd") & ".txt", ForAppending, True)
+    
+    If IsError Then
+        Message = "ERROR:" & Message
+    End If
+    TS.Write Format$(Now, "yyyy-mm-dd hh:mm:ss ") & Message & vbCrLf
+    
     TS.Close
     
     Set TS = Nothing
     Set FSO = Nothing
 
 End Sub
-
 Public Function SetLong(ByVal Value As Long) As Long
     SetLong = Value
 End Function
@@ -27,4 +30,3 @@ End Function
 Public Function SetInteger(ByVal Value As Integer) As Integer
     SetInteger = Value
 End Function
-
