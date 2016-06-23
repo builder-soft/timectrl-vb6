@@ -23,14 +23,14 @@ Public Sub Start()
     
     RaiseEvent IntervalEvent(Format(Now, "yyyy-MM-dd hh:mm:ss"))
     
-    Do While Cont ' DateDiff("s", dt, Now) < 30
-        DoEvents
-        Sleep 50   ' put your app to sleep in small increments to avoid having CPU go to 100%
+'    Do While Cont ' DateDiff("s", dt, Now) < 30
+'        DoEvents
+'        Sleep 50   ' put your app to sleep in small increments to avoid having CPU go to 100%
         
-        If Interval(Int(Format(Now, "s"))) Then
-            RaiseEvent IntervalEvent(Format(Now, "yyyy-MM-dd hh:mm:ss"))
-        End If
-    Loop
+'        If Interval(Int(Format(Now, "s"))) Then
+'            RaiseEvent IntervalEvent(Format(Now, "yyyy-MM-dd hh:mm:ss"))
+'        End If
+'    Loop
 
 End Sub
 Private Function Interval(Sec As Integer) As Boolean

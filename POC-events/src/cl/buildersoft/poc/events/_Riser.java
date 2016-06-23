@@ -2,7 +2,7 @@ package cl.buildersoft.poc.events  ;
 
 import com4j.*;
 
-@IID("{DCB8E26B-1A61-48BA-80CC-560A6E331D27}")
+@IID("{93B96E47-270E-417A-A506-9DDD18567221}")
 public interface _Riser extends Com4jObject {
   // Methods:
   /**

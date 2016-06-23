@@ -1,6 +1,6 @@
 Type=Exe
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\system32\stdole2.tlb#OLE Automation
-Reference=*\G{F3433008-D1DF-4237-A48F-7D283F775AEC}#1.0#0#Library.dll#
+Reference=*\G{F3433008-D1DF-4237-A48F-7D283F775AEC}#2.0#0#Library.dll#
 Form=Form1.frm
 Startup="AButton"
 ExeName32="EventRiser.exe"

@@ -2,7 +2,7 @@ package cl.buildersoft.poc.events.events;
 
 import com4j.*;
 
-@IID("{E052F887-4353-4D97-B06B-7BEDCDBB5E87}")
+@IID("{171E21B7-A9A4-4B0B-8E98-AA2CE2A37E2D}")
 public abstract class __Riser {
   // Methods:
   /**
