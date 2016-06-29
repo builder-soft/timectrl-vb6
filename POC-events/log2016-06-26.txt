@@ -1,0 +1,2 @@
+2016-06-26 02:20:52 Before Raise Event
+2016-06-26 02:20:52 After Raise Event

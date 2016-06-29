@@ -12,7 +12,7 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = True
 Option Explicit
-Private WithEvents CZKEM As zkemkeeper.CZKEM
+Public WithEvents CZKEM As zkemkeeper.CZKEM
 Attribute CZKEM.VB_VarHelpID = -1
 
 Public Event OnConnected()

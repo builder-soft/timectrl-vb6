@@ -21,8 +21,11 @@ public class MainRaiser {
 		EventCookie cookie = comObject.advise(__Riser.class, anyInstance);
 
 		comObject.start();
+		
+		System.out.println("Start waiting");
 
 		Thread.sleep(1000 * 3);
+		System.out.println("End waiting");
 
 		comObject.stopMe();
 		cookie.close();

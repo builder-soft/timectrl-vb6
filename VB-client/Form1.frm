@@ -37,7 +37,7 @@ Begin VB.Form Form1
       Height          =   285
       Left            =   1080
       TabIndex        =   1
-      Text            =   "192.168.0.98"
+      Text            =   "192.168.0.16"
       Top             =   240
       Width           =   1575
    End
@@ -74,6 +74,8 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim IsConnected  As Boolean
 Dim zk As Object
+Dim zk2 As Object
+
 Dim TheName As String
 Dim password As String
 Dim privilege As Long
@@ -128,18 +130,17 @@ End Sub
 Private Sub Form_Load()
     IsConnected = False
     Set zk = CreateObject("BSzkem.zkemProxy")
+    Set zk2 = CreateObject("BSzkem.ZKProxy2")
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
     zk.Disconnect
+    zk2.Disconnect
 End Sub
 
 Private Sub ViaProxy_Click()
-    
-    IsConnected = zk.Connect_Net(txtIP.Text, Int(txtPort.Text))
-    
-    Call zk.EnableDevice(1, True)
-  
+    IsConnected = zk2.Connect_Net(txtIP.Text, Int(txtPort.Text))
+    Call zk2.EnableDevice(1, True)
     MsgBox ("Listo " & IsConnected)
 End Sub
 

@@ -1,7 +1,7 @@
 Type=Exe
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\system32\stdole2.tlb#OLE Automation
-Reference=*\G{FE9DED34-E159-408E-8490-B720A5E632C7}#1.0#0#C:\WINDOWS\system32\zkemkeeper.dll#ZKEMKeeper 6.0 Control
-Reference=*\G{525300A5-47D9-4C4E-8BDC-DFD57DCB91C0}#1.2#0#..\VB\BSzkem.dll#
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{FE9DED34-E159-408E-8490-B720A5E632C7}#1.0#0#..\..\WINDOWS\system32\zkemkeeper.dll#ZKEMKeeper 6.0 Control
+Reference=*\A..\VB\BSzkem.vbp
 Form=Form1.frm
 Startup="Form1"
 ExeName32="Project1.exe"
