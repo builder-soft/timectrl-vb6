@@ -1,7 +1,0 @@
-2016-06-29 01:03:36 CZKEM_OnConnected()
-2016-06-29 01:05:33 CZKEM_OnConnected()
-2016-06-29 01:05:53 CZKEM_OnDisConnected()
-2016-06-29 01:07:48 CZKEM_OnConnected()
-2016-06-29 01:08:11 CZKEM_OnDisConnected()
-2016-06-29 01:09:31 CZKEM_OnConnected()
-2016-06-29 01:10:33 CZKEM_OnDisConnected()

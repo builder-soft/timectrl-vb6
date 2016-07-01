@@ -5,7 +5,7 @@ Public Sub WriteToLog(Message As String, Optional IsError As Boolean = False)
 
     Set FSO = New FileSystemObject
     
-    Set TS = FSO.OpenTextFile(App.Path & "\log" & Format$(Now, "yyyy-mm-dd") & ".txt", ForAppending, True)
+    Set TS = FSO.OpenTextFile(App.Path & "\BSzkem-" & Format$(Now, "yyyy-mm-dd") & ".log", ForAppending, True)
     
     If IsError Then
         Message = "ERROR:" & Message

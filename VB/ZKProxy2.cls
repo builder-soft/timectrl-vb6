@@ -12,7 +12,7 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = True
 Option Explicit
-Public WithEvents CZKEM As zkemkeeper.CZKEM
+Private WithEvents CZKEM As zkemkeeper.CZKEM
 Attribute CZKEM.VB_VarHelpID = -1
 
 Public Event OnConnected()
@@ -44,6 +44,13 @@ End Function
 Public Sub Disconnect()
     CZKEM.Disconnect
 End Sub
+Public Function RegEvent(ByVal Machine As Long, Optional ByVal EventMask As Long = 65535) As Boolean
+ On Error GoTo Handler
+    RegEvent = CZKEM.RegEvent(Machine, EventMask)
+    Exit Function
+Handler:
+    Call WriteToLog(Err.Number & " - " & Err.Description, True)
+End Function
 Public Function EnableDevice(ByVal Machine As Long, ByVal Enable As Boolean) As Boolean
     EnableDevice = CZKEM.EnableDevice(Machine, Enable)
 End Function
