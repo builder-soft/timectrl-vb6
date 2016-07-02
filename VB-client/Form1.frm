@@ -139,9 +139,12 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 
 Private Sub ViaProxy_Click()
-    IsConnected = zk2.Connect_Net(txtIP.Text, Int(txtPort.Text))
+    IsConnected = zk2.ConnectAndRegEvent(txtIP.Text, Int(txtPort.Text), 1)
+    MsgBox (IIf(IsConnected, "Conectado", "No conectado"))
+  '  Call zk2.RegEvent(1, 65535)
+    
     Call zk2.EnableDevice(1, True)
-    MsgBox ("Listo " & IsConnected)
+
 End Sub
 
  

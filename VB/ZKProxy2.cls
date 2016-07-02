@@ -41,11 +41,21 @@ End Sub
 Public Function Connect_Net(ByVal IP As String, ByVal Port As Integer) As Boolean
     Connect_Net = CZKEM.Connect_Net(IP, Port)
 End Function
+Public Function ConnectAndRegEvent(ByVal IP As String, ByVal Port As Integer, ByVal Machine As Long) As Boolean
+    Dim ConnectNet As Boolean
+    Dim RegEvent As Boolean
+    
+    ConnectNet = CZKEM.Connect_Net(IP, Port)
+    RegEvent = CZKEM.RegEvent(Machine, 65535)
+    
+    ConnectAndRegEvent = ConnectNet And RegEvent
+End Function
 Public Sub Disconnect()
     CZKEM.Disconnect
 End Sub
-Public Function RegEvent(ByVal Machine As Long, Optional ByVal EventMask As Long = 65535) As Boolean
- On Error GoTo Handler
+Public Function RegEvent(ByVal Machine As Long, ByVal EventMask As Long) As Boolean ' EventMask = 65535
+On Error GoTo Handler
+    WriteToLog "RegEvent(Machine:" & Machine & ", EventMask:" & EventMask & ")"
     RegEvent = CZKEM.RegEvent(Machine, EventMask)
     Exit Function
 Handler:
