@@ -2,13 +2,13 @@ package cl.buildersoft.timectrl.api.com4j.events;
 
 import com4j.*;
 
-@IID("{89CFED85-F9CA-4EFA-AE5F-8203064A6BC6}")
+@IID("{CD2CC8E7-691E-45FE-8C06-A9670AB1C0E3}")
 public abstract class __ZKProxy2 {
   // Methods:
   /**
    */
 
-  @DISPID(1)
+  @DISPID(2)
   public void onConnected() {
         throw new UnsupportedOperationException();
   }
@@ -19,7 +19,7 @@ public abstract class __ZKProxy2 {
    * @param fingerIndex Mandatory int parameter.
    */
 
-  @DISPID(2)
+  @DISPID(3)
   public void onDeleteTemplate(
     int enrollNumber,
     int fingerIndex) {
@@ -30,7 +30,7 @@ public abstract class __ZKProxy2 {
   /**
    */
 
-  @DISPID(3)
+  @DISPID(4)
   public void onDisConnected() {
         throw new UnsupportedOperationException();
   }
@@ -40,7 +40,7 @@ public abstract class __ZKProxy2 {
    * @param eventType Mandatory int parameter.
    */
 
-  @DISPID(4)
+  @DISPID(5)
   public void onDoor(
     int eventType) {
         throw new UnsupportedOperationException();
@@ -51,7 +51,7 @@ public abstract class __ZKProxy2 {
    * @param actionResult Mandatory int parameter.
    */
 
-  @DISPID(5)
+  @DISPID(6)
   public void onEmptyCard(
     int actionResult) {
         throw new UnsupportedOperationException();
@@ -65,7 +65,7 @@ public abstract class __ZKProxy2 {
    * @param templateLength Mandatory int parameter.
    */
 
-  @DISPID(6)
+  @DISPID(7)
   public void onEnrollFinger(
     int enrollNumber,
     int fingerIndex,
@@ -82,7 +82,7 @@ public abstract class __ZKProxy2 {
    * @param templateLength Mandatory int parameter.
    */
 
-  @DISPID(7)
+  @DISPID(8)
   public void onEnrollFingerEx(
     java.lang.String enrollNumber,
     int fingerIndex,
@@ -95,7 +95,7 @@ public abstract class __ZKProxy2 {
   /**
    */
 
-  @DISPID(8)
+  @DISPID(9)
   public void onFinger() {
         throw new UnsupportedOperationException();
   }
@@ -105,7 +105,7 @@ public abstract class __ZKProxy2 {
    * @param score Mandatory int parameter.
    */
 
-  @DISPID(9)
+  @DISPID(10)
   public void onFingerFeature(
     int score) {
         throw new UnsupportedOperationException();
@@ -116,7 +116,7 @@ public abstract class __ZKProxy2 {
    * @param cardNumber Mandatory int parameter.
    */
 
-  @DISPID(10)
+  @DISPID(11)
   public void onHIDNum(
     int cardNumber) {
         throw new UnsupportedOperationException();
@@ -127,7 +127,7 @@ public abstract class __ZKProxy2 {
    * @param key Mandatory int parameter.
    */
 
-  @DISPID(11)
+  @DISPID(12)
   public void onKeyPress(
     int key) {
         throw new UnsupportedOperationException();
@@ -138,7 +138,7 @@ public abstract class __ZKProxy2 {
    * @param enrollNumber Mandatory int parameter.
    */
 
-  @DISPID(12)
+  @DISPID(13)
   public void onNewUser(
     int enrollNumber) {
         throw new UnsupportedOperationException();
@@ -149,7 +149,7 @@ public abstract class __ZKProxy2 {
    * @param userID Mandatory int parameter.
    */
 
-  @DISPID(13)
+  @DISPID(14)
   public void onVerify(
     int userID) {
         throw new UnsupportedOperationException();
@@ -162,7 +162,7 @@ public abstract class __ZKProxy2 {
    * @param length Mandatory int parameter.
    */
 
-  @DISPID(14)
+  @DISPID(15)
   public void onWriteCard(
     int enrollNumber,
     int actionResult,
@@ -184,7 +184,7 @@ public abstract class __ZKProxy2 {
    * @param second Mandatory int parameter.
    */
 
-  @DISPID(15)
+  @DISPID(16)
   public void onAttTransaction(
     int enrollNumber,
     int isInValid,
@@ -214,7 +214,7 @@ public abstract class __ZKProxy2 {
    * @param workCode Mandatory int parameter.
    */
 
-  @DISPID(16)
+  @DISPID(17)
   public void onAttTransactionEx(
     java.lang.String enrollNumber,
     int isInValid,
@@ -227,6 +227,21 @@ public abstract class __ZKProxy2 {
     int minute,
     int second,
     int workCode) {
+        throw new UnsupportedOperationException();
+  }
+
+
+  /**
+   * @param alarmType Mandatory int parameter.
+   * @param enrollNumber Mandatory int parameter.
+   * @param verified Mandatory int parameter.
+   */
+
+  @DISPID(1)
+  public void onAlarm(
+    int alarmType,
+    int enrollNumber,
+    int verified) {
         throw new UnsupportedOperationException();
   }
 

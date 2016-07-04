@@ -8,7 +8,7 @@ public interface __ZKProxy2 extends Com4jObject {
   /**
    */
 
-  @DISPID(1)
+  @DISPID(2)
   void onConnected();
 
 
@@ -17,7 +17,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param fingerIndex Mandatory int parameter.
    */
 
-  @DISPID(2)
+  @DISPID(3)
   void onDeleteTemplate(
     int enrollNumber,
     int fingerIndex);
@@ -26,7 +26,7 @@ public interface __ZKProxy2 extends Com4jObject {
   /**
    */
 
-  @DISPID(3)
+  @DISPID(4)
   void onDisConnected();
 
 
@@ -34,7 +34,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param eventType Mandatory int parameter.
    */
 
-  @DISPID(4)
+  @DISPID(5)
   void onDoor(
     int eventType);
 
@@ -43,7 +43,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param actionResult Mandatory int parameter.
    */
 
-  @DISPID(5)
+  @DISPID(6)
   void onEmptyCard(
     int actionResult);
 
@@ -55,7 +55,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param templateLength Mandatory int parameter.
    */
 
-  @DISPID(6)
+  @DISPID(7)
   void onEnrollFinger(
     int enrollNumber,
     int fingerIndex,
@@ -70,7 +70,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param templateLength Mandatory int parameter.
    */
 
-  @DISPID(7)
+  @DISPID(8)
   void onEnrollFingerEx(
     java.lang.String enrollNumber,
     int fingerIndex,
@@ -81,7 +81,7 @@ public interface __ZKProxy2 extends Com4jObject {
   /**
    */
 
-  @DISPID(8)
+  @DISPID(9)
   void onFinger();
 
 
@@ -89,7 +89,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param score Mandatory int parameter.
    */
 
-  @DISPID(9)
+  @DISPID(10)
   void onFingerFeature(
     int score);
 
@@ -98,7 +98,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param cardNumber Mandatory int parameter.
    */
 
-  @DISPID(10)
+  @DISPID(11)
   void onHIDNum(
     int cardNumber);
 
@@ -107,7 +107,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param key Mandatory int parameter.
    */
 
-  @DISPID(11)
+  @DISPID(12)
   void onKeyPress(
     int key);
 
@@ -116,7 +116,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param enrollNumber Mandatory int parameter.
    */
 
-  @DISPID(12)
+  @DISPID(13)
   void onNewUser(
     int enrollNumber);
 
@@ -125,7 +125,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param userID Mandatory int parameter.
    */
 
-  @DISPID(13)
+  @DISPID(14)
   void onVerify(
     int userID);
 
@@ -136,7 +136,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param length Mandatory int parameter.
    */
 
-  @DISPID(14)
+  @DISPID(15)
   void onWriteCard(
     int enrollNumber,
     int actionResult,
@@ -156,7 +156,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param second Mandatory int parameter.
    */
 
-  @DISPID(15)
+  @DISPID(16)
   void onAttTransaction(
     int enrollNumber,
     int isInValid,
@@ -184,7 +184,7 @@ public interface __ZKProxy2 extends Com4jObject {
    * @param workCode Mandatory int parameter.
    */
 
-  @DISPID(16)
+  @DISPID(17)
   void onAttTransactionEx(
     java.lang.String enrollNumber,
     int isInValid,
@@ -197,6 +197,19 @@ public interface __ZKProxy2 extends Com4jObject {
     int minute,
     int second,
     int workCode);
+
+
+  /**
+   * @param alarmType Mandatory int parameter.
+   * @param enrollNumber Mandatory int parameter.
+   * @param verified Mandatory int parameter.
+   */
+
+  @DISPID(1)
+  void onAlarm(
+    int alarmType,
+    int enrollNumber,
+    int verified);
 
 
   // Properties:

@@ -45,7 +45,9 @@ End Sub
 
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
-    r.StopMe
+    If Not r Is Nothing Then
+        r.StopMe
+    End If
     Set r = Nothing
 
 End Sub

@@ -15,6 +15,7 @@ Option Explicit
 Private WithEvents CZKEM As zkemkeeper.CZKEM
 Attribute CZKEM.VB_VarHelpID = -1
 
+Public Event OnAlarm(ByVal AlarmType As Long, ByVal EnrollNumber As Long, ByVal Verified As Long)
 Public Event OnConnected()
 Public Event OnDeleteTemplate(ByVal EnrollNumber As Long, ByVal FingerIndex As Long)
 Public Event OnDisConnected()
@@ -234,6 +235,16 @@ Public Function SetStrCardNumber(ByRef ACardNumber As String) As Boolean
     
     SetStrCardNumber = Out
 End Function
+Private Sub CZKEM_OnAlarm(ByVal AlarmType As Long, ByVal EnrollNumber As Long, ByVal Verified As Long)
+On Error GoTo Handler
+    Dim Params As String
+    Params = "(AlarmType:" & AlarmType & ", EnrollNumber:" & EnrollNumber & ", Verified:" & Verified & ")"
+    WriteToLog "CZKEM_OnAlarm" & Params
+    RaiseEvent OnAlarm(AlarmType, EnrollNumber, Verified)
+    Exit Sub
+Handler:
+    Call WriteToLog(Err.Number & " - " & Err.Description, True)
+End Sub
 Private Sub CZKEM_OnConnected()
 On Error GoTo Handler
     WriteToLog "CZKEM_OnConnected()"
